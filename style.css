@@ -1,0 +1,224 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    display: grid;
+    gap: 10px 7px;
+    justify-content: center;
+    grid-template-columns: 1fr 250px 4fr 200px 1fr;
+    grid-template-rows: 170px 1fr 100px;
+    grid-template-areas:
+    "header header header header header"
+    ". aside-1 main aside-2 ."
+    "footer footer footer footer footer";
+}
+
+#main-title{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+#h1-text{
+    background: repeating-linear-gradient(45deg, hsl(43, 75%, 55%) 0px 10px, hsl(39, 100%, 83%) 20px 30px, hsl(43, 75%, 55%) 40px 50px);
+    background-clip: text;
+    width: fit-content;
+    margin: 0px;
+    padding: 0px 0px;
+    text-align: center;
+    align-content: center;
+    height: 100%;
+    font-size: 5rem;
+    color: transparent;
+    letter-spacing: 25px;
+    font-style: italic;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    z-index: 4;
+}
+#h1-shadow{
+    text-shadow: 7px 7px 5px black;
+    background-clip: text;
+    width: fit-content;
+    margin: 0px;
+    padding: 0px 0px;
+    text-align: center;
+    align-content: center;
+    height: 100%;
+    font-size: 5rem;
+    color: transparent;
+    letter-spacing: 25px;
+    font-style: italic;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    z-index: 3;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    background: linear-gradient(90deg, hsl(348, 100%, 18%), hsl(348, 100%, 35%), hsl(348, 100%, 18%));
+    border-bottom: 2px dashed hsl(48, 86%, 49%);
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+nav li{
+    margin: 10px 2px;
+    font-family: arial;
+    font-size: 0.7rem;
+}
+
+nav a{
+    color: gold;
+    text-decoration: none;
+    background: linear-gradient( hsl(0, 100%, 25%), red, hsl(0, 100%, 25%));
+    border-radius: 3px;
+    border: 1px solid black;
+    padding: 5px 10px;
+    transition: all 0.15s ease-in-out;
+}
+nav a.active{
+    background: linear-gradient( hsl(51, 100%, 25%), gold, hsl(51, 100%, 25%));
+    color: hsl(0, 0%, 0%);
+    font-weight: bold;
+    padding: 8px 10px;
+}
+nav a:hover:not(.active){
+    background: linear-gradient( hsl(51, 100%, 25%), gold, hsl(51, 100%, 25%));
+    color: hsl(0, 0%, 0%);
+    padding: 8px 10px;
+    box-shadow: -5px 0px 10px rgb(242, 229, 83), 5px 0px 10px gold, 0px -5px 10px rgb(252, 233, 124), 0px 5px 10px gold;
+}
+nav li{
+    transition: transform 0.15s;
+}
+nav li:hover{
+    transform: scale(1.1);
+}
+
+
+main{
+    background-color: white;
+    padding: 20px 10px;
+    border: 3px double black;
+}
+#aside1{
+    border: 3px double black;
+    background: linear-gradient(90deg, hsl(0, 0%, 80%), hsl(0, 0%, 100%), hsl(0, 0%, 80%));
+}
+#aside1 .price-option{
+    font-family: helvetica;
+    width: 32%;
+    text-align: center;
+    font-size: 0.8em;
+    color: gold;
+    padding: 5px 0px;
+    border-bottom: 2px ridge black;
+    border-top: 2px ridge  hsl(348, 100%, 18%);
+    border-radius: 15px;
+    margin-top: 2px;
+    background: linear-gradient(90deg,hsl(0, 100%, 20%) 0% 20%, red);
+}
+#aside1 .actual-price input{
+    display: none;
+}
+#aside1 .price-option:has(input:checked){
+    background: linear-gradient(135deg, hsl(0, 100%, 20%) 0% 20%, hsl(55, 79%, 51%));
+}
+#aside1 .price-option:hover{
+    cursor: pointer;
+    background: linear-gradient(135deg, hsl(0, 100%, 20%) 0% 20%, hsl(55, 79%, 51%));
+}
+
+
+#aside2{
+    background-color: hsl(0, 0%, 90%);
+    border: 3px double black;
+}
+footer{
+    background: linear-gradient(90deg, hsl(348, 100%, 10%), hsl(348, 100%, 35%), hsl(348, 100%, 10%));
+    border-top: 2px dashed hsl(48, 86%, 49%);
+}
+
+
+
+.actual-price{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.actual-price h3{
+    background: linear-gradient(0deg, hsl(348, 100%, 18%), hsl(348, 100%, 35%), hsl(348, 100%, 18%));
+    width: 100%;
+    text-align: center;
+    text-shadow: 3px 3px 3px black;
+    padding: 5px 0px;
+    color: rgb(255, 255, 98);
+    font-family: inherit;
+    font-style: italic;
+}
+
+#table-price{
+    margin: 5px;
+    width: 100%;
+    border-left: 1px solid hsl(0, 0%, 75%);
+    border-top: 1px solid hsl(0, 0%, 75%);
+    border-right: 1px solid hsl(0, 0%, 75%);;
+    border-collapse: collapse; /* łączy wewnętrzne linie w jedną */
+}
+
+td{
+    height: 1.5em;
+    border-bottom: 1px solid hsl(0, 0%, 75%);
+    background-color: hsl(61, 50%, 67%);
+    vertical-align: middle;
+    padding-left: 6px;
+    color: hsl(51, 100%, 10%);
+    text-shadow: 2px 2px 5px hsl(0, 0%, 25%);
+    font-family: "gill sans";
+    font-style: italic;
+    text-align: left;
+}
+
+
+
+
+
+@media (max-width: 1066px){
+    body{
+        grid-template-columns: 1fr 200px 4fr 200px 1fr;
+        grid-template-rows: 200px 1fr 150px;
+        grid-template-areas:
+        "header header header header header"
+        ". aside-1 main aside-2 ."
+        "footer footer footer footer footer";
+    }
+    
+    nav ul{
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    
+}
+
+#tel-number{
+    color: rgb(255, 224, 98);
+    text-shadow: 5px 5px 5px black;
+    font-size: 1.3em;
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-top: 5px;
+}
