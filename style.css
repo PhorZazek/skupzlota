@@ -142,6 +142,7 @@ main{
 #get-price{
     font-family: helvetica;
     width: 32%;
+    margin-bottom: 5px;
     text-align: center;
     font-size: 0.8em;
     color: gold;
@@ -154,7 +155,6 @@ main{
     cursor: pointer;
 }
 
-
 #aside2{
     background-color: hsl(0, 0%, 90%);
     border: 3px double black;
@@ -163,8 +163,6 @@ footer{
     background: linear-gradient(90deg, hsl(348, 100%, 10%), hsl(348, 100%, 35%), hsl(348, 100%, 10%));
     border-top: 2px dashed hsl(48, 86%, 49%);
 }
-
-
 
 .actual-price{
     display: flex;
@@ -304,7 +302,7 @@ td{
 @media (max-width: 500px){
     body{
         grid-template-columns: 1fr;
-        grid-template-rows: 200px 320px 1fr 300px 100px;
+        grid-template-rows: 200px auto 1fr 300px 100px;
         grid-template-areas:
         "header"
         "aside-1"
