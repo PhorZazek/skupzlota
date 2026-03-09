@@ -50,15 +50,15 @@
             <h3>Aktualne ceny złota</h3>
 
             <label class="price-option">
-                <input type="radio" name="option" checked>
+                <input type="radio" id="value1" name="option" checked>
                 > 300g
             </label>
             <label class="price-option">
-                <input type="radio" name="option">
+                <input type="radio" name="option" id="value2">
                 150g-300g
             </label>
             <label class="price-option">
-                <input type="radio" name="option">
+                <input type="radio" name="option" id="value3">
                 < 150g
             </label>
             <table id="table-price">
@@ -95,6 +95,7 @@
                     <td id="price999">...</td>
                 </tr>
             </table>
+            <button id="get-price" onclick="getPrice()">pobierz</button>
         </div>
     </aside>
     <aside id="aside2" style="grid-area: aside-2"></aside>
