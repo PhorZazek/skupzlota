@@ -16,7 +16,6 @@ async function getPrice(){
         else if(value3.checked){multiplier = 0.8}
         else {multiplier = 0}
 
-        console.log(data.cena);
         document.getElementById("price333").innerText = `${(data.cena * 0.333 * multiplier).toFixed(2)}`
         document.getElementById("price375").innerText = `${(data.cena * 0.375 * multiplier).toFixed(2)}`
         document.getElementById("price417").innerText = `${(data.cena * 0.417 * multiplier).toFixed(2)}`
